@@ -17,7 +17,7 @@ def telImages(urlChap, chap):	#fonction telechargement
 			image = Image.open(BytesIO(img_recup.content))	
 			image.save(os.path.basename(urlChap)+'.jpg')	#enregistrer image
 		except Exception as e:
-			print("Impossible de telecharger cettte image")
+			print("Impossible de telecharger cette image")
 
 		UrlImg  = base.select_one("div[id='imgholder'] a").get('href')	#recupérer addresse page 
 		if int(UrlImg.split("/")[2]) != chap:	#vérifie si le num chap diff chap entré
@@ -34,7 +34,7 @@ def telManga(nom, numChap):
 		try:
 			os.mkdir(f"{chap}")	#créer dossier
 		except :
-			print(f"Impossible de cree le dossier chapitre")
+			print(f"Impossible de creer le dossier chapitre")
 			sys.exit()
 						
 	os.chdir(f"{chap}")	#changer répertoire
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 		try:
 			os.mkdir(nom)	#creer dossier chapitre
 		except :
-			print(f"Impossible de cree le dossier du manga")
+			print(f"Impossible de creer le dossier du manga")
 			sys.exit()
 
 	os.chdir(nom)
